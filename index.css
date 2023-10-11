@@ -13,6 +13,7 @@ main {
     min-width: 400px;
     text-align: center;
     margin: 0 auto;
+    padding-bottom: 20px;
 }
 
 img {
@@ -32,6 +33,29 @@ img {
     display: flex;
     flex-direction: column;
     width: 80%;
+}
+
+/* #comments-el {
+    margin-bottom: 10px;
+} */
+
+ul {
+    padding-inline-start: 0px;
+}
+
+#comments-el {
+    margin: 0;
+}
+
+#comments-el li {
+    margin: 0 auto;
+    background-color: #fff;
+    color: #1D1920;
+    width: 70%;
+    font-size: 14px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    list-style: none;
 }
 
 #input-txt, #input-btn {
