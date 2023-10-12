@@ -14,22 +14,22 @@ const inputBtn = document.getElementById("input-btn")
 const commentsEl = document.getElementById("comments-el")
 
 inputBtn.addEventListener("click", function() {
-    // console.log("button clicked!")
     let inputValue = inputTxt.value
-    //console.log(inputValue)
     push(GratitudeGiverInDB, inputValue) 
     clearinputTxt()
 })
 
 onValue(GratitudeGiverInDB, function(snapshot){
-    let arrayItems = Object.values(snapshot.val())
-    //const q = query(snapshot, orderBy("name"));
-
-    //console.log(arrayItems)
+    let arrayItems = Object.entries(snapshot.val())
     clearCommentsEl()
     for (let i = 0; i < arrayItems.length; i++) {
-        addItemToCommentsSection(arrayItems[i])
-        console.log(arrayItems[i])
+        //addItemToCommentsSection(arrayItems[i]) // old way, works!
+        //console.log(arrayItems[i])
+        let currentItem = arrayItems[i]
+        // let currentItemID = currentItem[0]
+        // let currentItemValue = currentItem[1] 
+        addItemToCommentsSection(currentItem)
+
     }
 })
 
@@ -41,10 +41,12 @@ function clearCommentsEl() {
     commentsEl.innerHTML = ""
 }
 
-function addItemToCommentsSection(itemValue) {
-    commentsEl.innerHTML += `<li>${itemValue}</li>`
-
-
+function addItemToCommentsSection(item) {
+    // let itemID = item[0]
+    let itemValue = item[1]
+    let newEl = document.createElement("li")
+    newEl.textContent = itemValue
+    commentsEl.append(newEl)
 }
 
 
@@ -66,5 +68,8 @@ function addItemToCommentsSection(itemValue) {
 // pull in the previous entries!! - working YAY!!!
 
 // I add the clear comments list before each loop, now it's adding two each time! - FIXED!
+// now it's getting the second letter of each word haha! YAY GOT IT!
 
 // reverse the order!
+
+// add mickey hand!
