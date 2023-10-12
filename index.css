@@ -82,3 +82,10 @@ ul {
     cursor: pointer;
 }
 
+#to-from-container {
+    display: flex;
+}
+
+.address-field {
+    min-width: 0;
+}
