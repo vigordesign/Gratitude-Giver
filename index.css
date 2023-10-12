@@ -4,14 +4,14 @@ html, body {
     background-color: #3C2B2C;
     color: #fff;
     font-family: 'Young Serif', serif;
-    box-sizing: border-box;
 }
 
 main {
     color: #fff;
     background-color: #1D1920;
-    width: 30%;
-    min-width: 400px;
+    width: 100%;
+    min-width: 320px;
+    max-width: 450px;
     text-align: center;
     margin: 0 auto;
     padding-bottom: 20px;
@@ -91,6 +91,7 @@ ul {
 #to-from-container {
     display: flex;
     justify-content: space-between;
+    gap: 10px;
 }
 
 .address-field {
@@ -98,7 +99,6 @@ ul {
 }
 
 #to-field, #from-field {
-    width: 42%;
     border-radius: 5px;
 }
 
