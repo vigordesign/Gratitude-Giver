@@ -79,5 +79,6 @@ ul {
     color: #1D1920;
     font-size: 30px;
     border: none;
+    cursor: pointer;
 }
 

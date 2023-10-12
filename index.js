@@ -20,16 +20,20 @@ inputBtn.addEventListener("click", function() {
 })
 
 onValue(GratitudeGiverInDB, function(snapshot){
-    let arrayItems = Object.entries(snapshot.val())
-    clearCommentsEl()
-    for (let i = 0; i < arrayItems.length; i++) {
-        //addItemToCommentsSection(arrayItems[i]) // old way, works!
-        //console.log(arrayItems[i])
-        let currentItem = arrayItems[i]
-        // let currentItemID = currentItem[0]
-        // let currentItemValue = currentItem[1] 
-        addItemToCommentsSection(currentItem)
+    if (snapshot.exists()) {
+        let arrayItems = Object.entries(snapshot.val())
+        clearCommentsEl()
+        for (let i = 0; i < arrayItems.length; i++) {
+            //addItemToCommentsSection(arrayItems[i]) // old way, works!
+            //console.log(arrayItems[i])
+            let currentItem = arrayItems[i]
+            // let currentItemID = currentItem[0]
+            // let currentItemValue = currentItem[1] 
+            addItemToCommentsSection(currentItem)
 
+        }
+    } else {
+        commentsEl.innerHTML = "No items here... yet"
     }
 })
 
@@ -75,7 +79,6 @@ function addItemToCommentsSection(item) {
 // I add the clear comments list before each loop, now it's adding two each time! - FIXED!
 // now it's getting the second letter of each word haha! YAY GOT IT!
 // reverse the order! DONE!!!
-
-// add mickey hand!
+// add mickey hand! DONE!
 
 // add to and from sections!
