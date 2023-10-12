@@ -4,6 +4,7 @@ html, body {
     background-color: #3C2B2C;
     color: #fff;
     font-family: 'Young Serif', serif;
+    box-sizing: border-box;
 }
 
 main {
