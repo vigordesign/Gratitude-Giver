@@ -44,9 +44,14 @@ function clearCommentsEl() {
 function addItemToCommentsSection(item) {
     // let itemID = item[0]
     let itemValue = item[1]
-    let newEl = document.createElement("li")
+    let newEl = document.createElement("li") // create the li
     newEl.textContent = itemValue
     commentsEl.append(newEl)
+    if (commentsEl.firstChild) {  // places newest endorsement first
+        commentsEl.insertBefore(newEl, commentsEl.firstChild);
+    } else {
+        commentsEl.append(newEl);
+    }
 }
 
 
@@ -69,7 +74,8 @@ function addItemToCommentsSection(item) {
 
 // I add the clear comments list before each loop, now it's adding two each time! - FIXED!
 // now it's getting the second letter of each word haha! YAY GOT IT!
-
-// reverse the order!
+// reverse the order! DONE!!!
 
 // add mickey hand!
+
+// add to and from sections!
