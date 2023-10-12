@@ -49,13 +49,14 @@ ul {
 
 #comments-el li {
     margin: 0 auto;
-    background-color: #fff;
+    background-color: #FFEBD8;
     color: #1D1920;
     width: 70%;
     font-size: 14px;
     padding: 10px 20px;
     margin-bottom: 10px;
     list-style: none;
+    text-align: left;
 }
 
 #input-txt, #input-btn {
@@ -65,6 +66,10 @@ ul {
 
 #input-txt {
     height: 100px;
+    margin-bottom: 10px;
+}
+
+#input-txt, #to-field, #from-field  {
     background: none;
     color: #fff;
     padding: 10px;
@@ -84,8 +89,27 @@ ul {
 
 #to-from-container {
     display: flex;
+    justify-content: space-between;
 }
 
 .address-field {
     min-width: 0;
+}
+
+#to-field, #from-field {
+    width: 42%;
+    border-radius: 5px;
+}
+
+.toEl {
+    margin-bottom: 10px;
+    width: auto;
+}
+
+.fromEl {
+    margin-top: 10px;
+}
+
+.messageEl {
+    color: #52302C;
 }

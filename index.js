@@ -30,6 +30,7 @@ inputBtn.addEventListener("click", function() {
     clearinputTxt()
 })
 
+///// Get items from the database ///// 
 onValue(GratitudeGiverInDB, function(snapshot){
     if (snapshot.exists()) {
         let arrayItems = Object.entries(snapshot.val())
@@ -40,10 +41,11 @@ onValue(GratitudeGiverInDB, function(snapshot){
 
         }
     } else {
-        commentsEl.innerHTML = "No items here... yet"
+        commentsEl.innerHTML = "Add your gratitude above!"
     }
 })
 
+///// Clear items when button is clicked! ///// 
 function clearinputTxt() {
     inputTxt.value = ""
     fromFieldEl.value = ""
@@ -54,53 +56,28 @@ function clearCommentsEl() {
     commentsEl.innerHTML = ""
 }
 
+///// Add comments section! ///// 
 function addItemToCommentsSection(item) {
     let itemValue = item[1]
-    
+
     let newEl = document.createElement("li") // create the li
     
     let fromEl = document.createElement("div")  // Creates From: Element
-    fromEl.textContent = `From ${itemValue.from}`
-    fromEl.classList.add('bold-text')
+    fromEl.textContent = `From: ${itemValue.from}`
+    fromEl.classList.add('fromEl')
 
     let messageEl = document.createElement("div")  // Creates Message Element
     messageEl.textContent = itemValue.message
+    messageEl.classList.add('messageEl')
 
     let toEl = document.createElement("div")  // Creates To: Element
-    toEl.textContent = `To ${itemValue.to}`
-    toEl.classList.add('bold-text')
+    toEl.textContent = `To: ${itemValue.to}`
+    toEl.classList.add('toEl')
 
-    newEl.textContent = itemValue
-    commentsEl.append(toEl, messageEl, fromEl)
+    newEl.append(toEl, messageEl, fromEl)
     if (commentsEl.firstChild) {  // places newest endorsement first
         commentsEl.insertBefore(newEl, commentsEl.firstChild);
     } else {
         commentsEl.append(newEl);
     }
 }
-
-
-
-
-
-// backup before I change this above!!
-// function addItemToCommentsSection(itemValue) {
-//     commentsEl.innerHTML += `<li>${itemValue}</li>`
-// }
-
-
-
-// new comments are going below!
-// only one at a time though - Fixed with +=!!! YAY!!!
-// put them in the p tags that I made! hahaha make that an UL! - DONE!!
-
-// make it work with the database! = done!!
-// pull in the previous entries!! - working YAY!!!
-
-// I add the clear comments list before each loop, now it's adding two each time! - FIXED!
-// now it's getting the second letter of each word haha! YAY GOT IT!
-// reverse the order! DONE!!!
-// add mickey hand! DONE!
-
-// add to and from sections!
-// close!! The new divs need to go inside of the LI that I already have! YAY! SO CLOSE!!!!!
