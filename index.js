@@ -43,7 +43,18 @@ function clearCommentsEl() {
 
 function addItemToCommentsSection(itemValue) {
     commentsEl.innerHTML += `<li>${itemValue}</li>`
+
+
 }
+
+
+
+
+
+// backup before I change this above!!
+// function addItemToCommentsSection(itemValue) {
+//     commentsEl.innerHTML += `<li>${itemValue}</li>`
+// }
 
 
 
